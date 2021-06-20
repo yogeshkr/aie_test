@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block page_title %}Employee{% endblock %}
+{% block body -%}
+
+<div class="container">
+    <div class="row">
+        <div class="clear">&nbsp</div>
+    </div>
+    <div class="row">
+        <div class="col-12 sm">
+            <h3 align="center">Edit Employee</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="clear">&nbsp</div>
+    </div>
+    <div class="row">
+        <div class="col-2 sm">
+        </div>
+        <div class="col-4 sm">
+            {{ form_start(form, { 'attr' : { 'class': 'form' } }) }}
+            {{ form_end(form) }}
+        </div>
+        <div class="col-2 sm">
+        </div>
+
+    </div>
+{% endblock %}

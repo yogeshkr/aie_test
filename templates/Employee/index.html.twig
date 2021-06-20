@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block page_title %}Employee list{% endblock %}
+
+{% block body -%}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 sm">
+                <h3 align="center">Employee List</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 sm">
+                {% include 'notice.html.twig' %}
+            </div>
+        </div>
+
+        <div class="row">
+
+            <table class="table table-hover table-striped">
+                <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Age</th>
+                    <th>Date of Joining</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for employee in employees %}
+                    <tr class="action-tr">
+                        <td>{{ employee.name }}</td>
+                        <td>{{ employee.age }}</td>
+                        <td>{{ employee.dateOfJoining | date("d M Y") }}</td>
+                        <td>
+                            <a class="" href="{{ path('employee_show', {'id' : employee.id}) }}">Edit</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
